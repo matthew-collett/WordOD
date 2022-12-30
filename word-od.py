@@ -22,7 +22,7 @@ def get_word_od_msg():
     qualities = SOUP.find('div', class_='otd-item-headword__pos').text.strip().split("\n\n")
     sentence = SOUP.find('div', class_='wotd-item-origin__content wotd-item-origin__content-full').findAll('p')[2].text.strip()
 
-    msg = "@everyone\n__Word of the day for {}__\n\n**{}**\n*{}*\n*{}*\n\n**DEFINITION**\n*{}*\n\n*{}*".format(date.today().strftime("%B %d, %Y"), word.upper(), qualities[0], pronun, qualities[1], sentence)
+    msg = "@everyone\n__Word of the day for {}__\n\n**{}**\n*{}*\n*{}*\n\n**DEFINITION**\n*{}*\n\n*{}*".format(date.today().strftime("%B %d, %Y"), word.upper(), qualities[0].rstrip(), pronun, qualities[1], sentence)
     return msg
 
 def send_word_od_msg():
