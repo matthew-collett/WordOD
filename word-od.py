@@ -30,7 +30,7 @@ def send_word_od_msg():
     msg = get_word_od_msg()
     discord.SyncWebhook.from_url(WEBHOOK).send(msg)
 
-schedule.every().day.at("8:00").do(send_word_od_msg)
+schedule.every().day.at("08:00").do(send_word_od_msg)
 
 while True:
     schedule.run_pending()
